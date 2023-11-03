@@ -1,0 +1,13 @@
+#!/bin/bash
+
+PREVIOUS_CALLBACK_FILE="/var/lib/nordvpn/previous_callback.txt"
+
+nordvpn logout --persist-token > /dev/null 2>&1
+rm -f $PREVIOUS_CALLBACK_FILE
+
+nordvpn login
+echo -e "Please copy the link of the "Continue" button after logging in and paste it here."
+read -p "Callback URL: " CALLBACK
+nordvpn login --callback "${CALLBACK}" || exit 1
+echo $CALLBACK > "${PREVIOUS_CALLBACK_FILE}"
+exit 0

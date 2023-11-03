@@ -93,6 +93,26 @@ Generally, the default settings will provide a great experience, however, severa
 | **TECHNOLOGY**<span id="env-technology"></span> | NordLynx                 | Specify the VPN Technology to use (NordLynx/OpenVPN)                                                                           |
 | **TOKEN**<span id="env-token"></span> |                          | Generated from your [NordVPN account web portal](https://my.nordaccount.com/dashboard/nordvpn/)                                                                                                                    |
 
+### Using a callback URL for authentication
+
+To use a callback URL for authentication, start the docker container without providing token. When running in interactive mode, the authentication process gets started automatically. If you're running the container in non-interactive mode you need to run the following command:
+
+```sh
+docker exec -i <container_id> nord_login_callback
+```
+
+The full command will be provided in the logs of the container when starting up.
+
+NordVPN will show an URL in the console that can be used to retrieve a callback URL. Open this URL in your browser and login with your NordVPN account. After logging in you need to copy the link of the "Continue" text (Your browser might try to open the NordVPN application if you have that installed) and paste it into the prompt. After this the setup will continue.
+
+Keep in mind that each callback link can only be used once. The link you need to paste will look like this:
+
+```
+nordvpn://login?action=login&exchange_token=MGFlY2E1NmE4YjM2NDM4NjUzN2VjOWIzYWM3ZTU3ZDliNDdiNzRjZTMwMjE5YjkzZTNhNTI3ZWZlOTIwMGJlOQ%3D%3D&status=done
+```
+
+To reauthenticate you should use the `docker exec` command. Alternatively, you can recreate the container and delete its volume or delete the file that keeps track of the callback URL (if you have access to the volume of the container). The callback URL gets stored in the following file within the container: `/var/lib/nordvpn/previous_callback.txt`
+
 ## Troubleshooting
 
 - Ensure you have read all of the above information
