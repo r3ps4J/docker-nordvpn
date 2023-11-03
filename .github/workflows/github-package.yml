@@ -27,7 +27,7 @@ env:
   ## name of image
   IMAGE: nordvpn
   ## github.repository as <account>/<repo>
-  IMAGE_NAME: tmknight/nordvpn
+  IMAGE_NAME: r3ps4j/nordvpn
   ## cosign version
   COSIGN_VER: 'v2.1.1'
   ## Build args

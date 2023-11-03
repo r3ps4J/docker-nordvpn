@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   vpn:
-    image: tmknight88/nordvpn:latest
+    image: r3ps4j/nordvpn:latest
     container_name: nordvpn
     cap_add:
       - NET_ADMIN
@@ -10,7 +10,7 @@ services:
         limits:
           memory: 128m
     env_file: ./nord.env
-    environment: # Review https://github.com/tmknight/docker-nordvpn/#environment-variables
+    environment: # Review https://github.com/r3ps4j/docker-nordvpn/#environment-variables
       BYPASS_LIST: iconfig.co,whatsmyip.com
       CHECK_CONNECTION_INTERVAL: 90
       CONNECTION_FILTERS: "filters[country_id]=38"

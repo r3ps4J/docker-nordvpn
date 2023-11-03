@@ -19,7 +19,7 @@ env:
   # name of image
   IMAGE: nordvpn
   # github.repository as <account>/<repo>
-  IMAGE_NAME: tmknight88/nordvpn
+  IMAGE_NAME: r3ps4j/nordvpn
   # Build args
   BUILD_ARGS: |
     "UBUNTU_VER=${{ vars.UBUNTU_VER }}"

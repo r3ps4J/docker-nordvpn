@@ -23,7 +23,7 @@ Examples of use:
 
 Docker Hub repository:
 
-- <https://hub.docker.com/r/tmknight88/nordvpn>
+- <https://hub.docker.com/r/r3ps4j/nordvpn>
 
 Optimized for NordLynx:
 
@@ -121,15 +121,15 @@ To reauthenticate you should use the `docker exec` command. Alternatively, you c
 - Check and double-check all of your values
 - Perform the following:
   - Start a basic container:
-    - docker run -it --rm --name=nordvpn-tmp tmknight88/nordvpn:latest bash
+    - docker run -it --rm --name=nordvpn-tmp r3ps4j/nordvpn:latest bash
   - Perform the following in the container:
     - nordvpnd &
     - nordvpn login --token [your token]
     - nordvpn connect
   - If basic container connectes without issue, then slowly/one-at-a-time, start applying any cusomizations and go through the previous steps with each change (yes, laborious, but that's what it takes)
-    - docker run -it --rm --name=nordvpn-tmp -v [something] tmknight88/nordvpn:latest bash
-    - docker run -it --rm --name=nordvpn-tmp -v [something] -e [something else] tmknight88/nordvpn:latest bash
-    - docker run -it --rm --name=nordvpn-tmp -v [something] -e [something else] -e [and so on] tmknight88/nordvpn:latest bash
+    - docker run -it --rm --name=nordvpn-tmp -v [something] r3ps4j/nordvpn:latest bash
+    - docker run -it --rm --name=nordvpn-tmp -v [something] -e [something else] r3ps4j/nordvpn:latest bash
+    - docker run -it --rm --name=nordvpn-tmp -v [something] -e [something else] -e [and so on] r3ps4j/nordvpn:latest bash
 - If you've performed all of the above without determining the issue, feel free to open an issue
   - Be sure to include your log entries and be as descriptive as possible
 
@@ -141,6 +141,7 @@ Using the NordVPN API<span id="api"></span>
 
 ## Credits
 
+- [tmknight](https://github.com/tmknight)
 - [bubuntux](https://github.com/bubuntux)
 - [kubernetes-sigs](https://github.com/kubernetes-sigs)
 
@@ -148,9 +149,9 @@ Using the NordVPN API<span id="api"></span>
 
 This project is independently developed for personal use; there is no affiliation with NordVPN or Nord Security companies.  Nord Security companies are not responsible for, nor have control over, the nature, content and availability of this project.
 
-[GitHubPackageBadge]: https://github.com/tmknight/docker-nordvpn/actions/workflows/github-package.yml/badge.svg
-[GitHubPackageLink]: https://github.com/tmknight/docker-nordvpn/pkgs/container/nordvpn
-[DockerPublishingBadge]: https://github.com/tmknight/docker-nordvpn/actions/workflows/docker-publish.yml/badge.svg
-[DockerPullsBadge]: https://badgen.net/docker/pulls/tmknight88/nordvpn?icon=docker&label=Docker+Pulls&labelColor=black&color=green
-[DockerSizeBadge]: https://badgen.net/docker/size/tmknight88/nordvpn?icon=docker&label=Docker+Size&labelColor=black&color=green
-[DockerLink]: https://hub.docker.com/r/tmknight88/nordvpn
+[GitHubPackageBadge]: https://github.com/r3ps4j/docker-nordvpn/actions/workflows/github-package.yml/badge.svg
+[GitHubPackageLink]: https://github.com/r3ps4j/docker-nordvpn/pkgs/container/nordvpn
+[DockerPublishingBadge]: https://github.com/r3ps4j/docker-nordvpn/actions/workflows/docker-publish.yml/badge.svg
+[DockerPullsBadge]: https://badgen.net/docker/pulls/r3ps4j/nordvpn?icon=docker&label=Docker+Pulls&labelColor=black&color=green
+[DockerSizeBadge]: https://badgen.net/docker/size/r3ps4j/nordvpn?icon=docker&label=Docker+Size&labelColor=black&color=green
+[DockerLink]: https://hub.docker.com/r/r3ps4j/nordvpn
